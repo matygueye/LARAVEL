@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/vehicule', [VehiculeController::class, 'liste_vehicule']);
 Route::get('/ajouter', [VehiculeController::class, 'ajouter_vehicule']);
-Route::get('/ajouter/traitement', [VehiculeController::class, 'ajouter_vehicule_traitement']);
+Route::post('/ajouter/traitement', [VehiculeController::class, 'ajouter_vehicule_traitement']);
+Route::put('/vehicule/{id}', [VehiculeController::class, 'update'])->name('vehicule.update');
+
+Route::get('/vehicule/{id}/edit', [VehiculeController::class, 'edit'])->name('vehicule.edit');
+Route::put('/vehicule/{id}', [VehiculeController::class, 'update'])->name('vehicule.update');
+Route::delete('/vehicule/{id}', [VehiculeController::class, 'destroy'])->name('vehicule.delete');
+
+

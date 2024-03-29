@@ -13,7 +13,12 @@ class Vehicule extends Model
         'date_achat',
         'defaut',
         'matricule',
-        'chauffeur_id',
+        'chauffeur',
         'statut',
+        'image',
     ];
+    public function chauffeur()
+    {
+        return $this->belongsTo(Chauffeur::class);
+    }
 }

@@ -19,7 +19,8 @@ class CreateVehiculesTable extends Migration
             $table->date('date_achat');
             $table->string('defaut');
             $table->string('matricule');
-            $table->unsignedBigInteger('chauffeur_id');
+            $table->string('chauffeur');
+            $table->string('image')->nullable();
             $table->string('statut');
             $table->timestamps();
         });
@@ -35,3 +36,6 @@ class CreateVehiculesTable extends Migration
         Schema::dropIfExists('vehicules');
     }
 }
+
+
+
